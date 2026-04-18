@@ -16,6 +16,7 @@ public class Student {
     private String name;
     private String email;
     private int age;
+    private Long courseId; // New field to store the enrolled course ID
 
     public Student() {
     }
@@ -56,5 +57,13 @@ public class Student {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public Long getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(Long courseId) {
+        this.courseId = courseId;
     }
 }

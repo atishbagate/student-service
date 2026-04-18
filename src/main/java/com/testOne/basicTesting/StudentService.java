@@ -1,5 +1,8 @@
 package com.testOne.basicTesting;
 
+import com.testOne.basicTesting.client.CourseClient;
+import com.testOne.basicTesting.dto.CourseDTO;
+import feign.FeignException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +14,9 @@ public class StudentService {
 
     @Autowired
     private StudentRepository studentRepository;
+
+    @Autowired
+    private CourseClient courseClient;
 
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
@@ -34,5 +40,23 @@ public class StudentService {
 
     public void deleteStudent(Long id) {
         studentRepository.deleteById(id);
+    }
+
+    public Student enrollStudent(Long studentId, Long courseId) {
+        // 1. Validate the student exists
+        Student student = studentRepository.findById(studentId)
+                .orElseThrow(() -> new RuntimeException("Student not found with id: " + studentId));
+
+        // 2. Call Course Service to validate the course exists
+        CourseDTO course;
+        try {
+            course = courseClient.getCourseById(courseId);
+        } catch (FeignException.NotFound e) {
+            throw new RuntimeException("Course not found with id: " + courseId);
+        }
+
+        // 3. Enroll the student
+        student.setCourseId(course.getId());
+        return studentRepository.save(student);
     }
 }

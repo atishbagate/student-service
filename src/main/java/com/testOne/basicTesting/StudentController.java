@@ -36,4 +36,9 @@ public class StudentController {
     public void deleteStudent(@PathVariable Long id) {
         studentService.deleteStudent(id);
     }
+
+    @PostMapping("/{studentId}/enroll/{courseId}")
+    public Student enrollStudent(@PathVariable Long studentId, @PathVariable Long courseId) {
+        return studentService.enrollStudent(studentId, courseId);
+    }
 }
