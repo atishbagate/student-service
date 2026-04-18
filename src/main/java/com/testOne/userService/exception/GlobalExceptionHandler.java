@@ -1,4 +1,4 @@
-package com.testOne.basicTesting.exception;
+package com.testOne.userService.exception;
 
 import feign.FeignException;
 import org.springframework.http.HttpStatus;

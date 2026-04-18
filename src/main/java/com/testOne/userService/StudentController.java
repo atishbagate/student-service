@@ -1,4 +1,4 @@
-package com.testOne.basicTesting;
+package com.testOne.userService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

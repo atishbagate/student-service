@@ -1,4 +1,4 @@
-package com.testOne.basicTesting.dto;
+package com.testOne.userService.dto;
 
 public class CourseDTO {
 

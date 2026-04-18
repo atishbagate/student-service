@@ -1,7 +1,7 @@
-package com.testOne.basicTesting;
+package com.testOne.userService;
 
-import com.testOne.basicTesting.client.CourseClient;
-import com.testOne.basicTesting.dto.CourseDTO;
+import com.testOne.userService.client.CourseClient;
+import com.testOne.userService.dto.CourseDTO;
 import feign.FeignException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

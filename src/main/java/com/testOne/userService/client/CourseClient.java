@@ -1,6 +1,6 @@
-package com.testOne.basicTesting.client;
+package com.testOne.userService.client;
 
-import com.testOne.basicTesting.dto.CourseDTO;
+import com.testOne.userService.dto.CourseDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

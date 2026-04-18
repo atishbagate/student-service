@@ -1,4 +1,4 @@
-package com.testOne.basicTesting;
+package com.testOne.userService;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

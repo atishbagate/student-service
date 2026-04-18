@@ -1,4 +1,4 @@
-package com.testOne.basicTesting;
+package com.testOne.userService;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
